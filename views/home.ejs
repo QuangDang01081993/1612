@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src='jquery-3.1.1.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      $(document).ready(()=>{
+        var socket = io();
+        $('#list_room li').on('click',function() {
+          $('#list_room li').removeClass('active-room');
+          $(this).addClass('active-room');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Home page</h1>
+    <ul id ='list_room'>
+      <%for(e of arrRoom){%>
+        <li><%=e%></li>
+      <%}%>
+    </ul>
+  </body>
+</html>
